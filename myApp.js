@@ -11,7 +11,11 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
 })
 
-
+app.use(function middleware(req, res, next) {
+    var string = req.method + " " + req.path + " - " + req.ip;
+    console.log(string);
+    next();
+});
 
 app.get('/json', (req, res) => {
     if (process.env.MESSAGE_STYLE == 'uppercase') {
