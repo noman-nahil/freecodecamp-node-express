@@ -1,6 +1,6 @@
 let express = require('express');
 let app = express();
-const bodyParser = require()
+const bodyParser = require("body-parser")
 
 console.log("Hello world")
 var response = "Hello json"
@@ -8,6 +8,7 @@ var response = "Hello json"
 bodyParser.urlencoded({
     extended: false
 })
+app.use(bodyParser.json());
 app.use("/public", express.static(__dirname + "/public"));
 //app.use(__dirname + '/public/style.css');
 app.get('/', (req, res) => {
