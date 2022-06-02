@@ -1,10 +1,13 @@
 let express = require('express');
 let app = express();
-
+const bodyParser = require()
 
 console.log("Hello world")
 var response = "Hello json"
 
+bodyParser.urlencoded({
+    extended: false
+})
 app.use("/public", express.static(__dirname + "/public"));
 //app.use(__dirname + '/public/style.css');
 app.get('/', (req, res) => {
