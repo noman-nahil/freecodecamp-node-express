@@ -5,9 +5,9 @@ const bodyParser = require("body-parser")
 console.log("Hello world")
 var response = "Hello json"
 
-bodyParser.urlencoded({
+app.use(bodyParser.urlencoded({
     extended: false
-})
+}));
 app.use(bodyParser.json());
 app.use("/public", express.static(__dirname + "/public"));
 //app.use(__dirname + '/public/style.css');
